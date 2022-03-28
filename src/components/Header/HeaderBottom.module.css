@@ -1,0 +1,103 @@
+.HeaderBottom {
+    width: 100%;
+    
+    /* background-color: #181a1b;     */
+}
+
+.root{
+    max-width: 1280px;
+    display: block;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 500px;
+}
+ 
+.container{
+    max-width: 1280px;
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    /* max-height: 355px; */
+}
+ 
+.paper {
+    height: 320px;
+    width: 230px;
+    /* // backgroundColor: '#2f3234',
+    // padding: '8px', */
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    display: grid;
+    outline: 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    border-radius: 0;
+    vertical-align: middle;
+    /* moz-appearance: none; */
+    justify-content: center;
+    text-decoration: none;
+    background-color: #2b2b2b;
+    -webkit-appearance: none;
+    box-shadow: rgb(0 0 0 / 50%) 0px 8px 15px;
+    /* // webkitTapHighlightColor: 'transparent', */
+    
+}
+.paper:hover{
+    background-color: #2f3234;         
+}
+
+.imageOverlay {
+    top: 70%;
+    left: 50%;
+    color: #fff;
+    opacity: 0;
+    z-index: 100;
+    position: absolute;
+    font-size: 40px;
+    transform: translate(-50%, -50%);
+    transition: all .3s;
+    font-weight: 600;
+    margin: 0;
+
+}
+.imageOverlay:hover{
+    opacity:50;
+    top:50%;
+}
+
+.title{
+    font-weight: 600;
+    margin-top: 5px;
+    color: rgb(255, 255, 255);
+    max-width: 113px;
+    font-size: 14px;
+    font-family: Work Sans, sans-serif;
+    line-height: 1.43;
+}
+
+.image {
+    width: 70%;
+    height: 60%;
+    margin: auto;
+    /* // objectFit: 'cover',   */
+}
+/* // imageOverlay:{
+//     top: '70%',
+//     left: '50%',
+//     color: '#fff',
+//     opacity: '0',
+//     zIndex: '100',
+//     position: 'absolute',
+//     fontSize: '35px',
+//     transform: 'translate(-50%, -50%)',
+//     transition: 'all .3s',
+//     fontWeight: '600',
+// } */

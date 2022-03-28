@@ -1,0 +1,130 @@
+.Movie {
+    width: 230px;
+    height: 345px;
+    /* min-height: 361px; */
+    /* background-color: var(--secondaryColorDark); */
+    padding: .3rem;
+    border-radius: 0px;
+    font-weight: 300;
+    position: relative;
+    /* box-shadow: 3px 4px 5px rgba(0,0,0,.3); */
+    cursor: pointer;
+    transition: all .2s;
+    backface-visibility: hidden;
+    text-decoration: none;
+    color: inherit;
+    text-transform: capitalize;
+    filter: saturate(1.5);
+    backface-visibility: hidden;
+       
+
+}
+/* .Movie:hover {
+    box-shadow: rgb(0 0 0 / 50%) 0px 8px 15px;
+} */
+
+
+
+.Movie img {
+    width: 230px;
+    height: 320px;
+    border-radius: 5px;
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    display: inline-flex;
+    outline: 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    border-radius: 0;
+    vertical-align: middle;
+    -moz-appearance: none;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    
+    /* -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    /* min-height: 23rem; */
+    /*-webkit-appearance: none; */
+    
+}
+
+.Movie img:hover{
+    box-shadow: rgb(0 0 0 / 50%) 0px 8px 15px;
+}
+
+.name {
+    font-size: 14px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.43;
+    font-weight: 600;
+    margin-top: 5px;
+    color: rgb(255, 255, 255);
+    max-width: 230px;
+    display: flex;
+    justify-content: start;
+    /* background-color: #2b2b2b; */
+}
+
+@media only screen and (max-width: 1400px) {
+    .Movie {
+        width: 230px;
+        height: 345px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .Movie {
+        width: 230px;
+        height: 345px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .Movie {
+        width: 11rem;
+    }
+    .MovieRating {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Movie {
+        width: 12rem;
+        min-height: 22rem;
+    }
+    .Movie img {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .Movie {
+        width: 11rem;
+        min-height: 21rem;
+    }
+    .MovieRating {
+        padding: .05rem .2rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .Movie {
+        width: 9.9rem;
+        min-height: 19rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .Movie {
+        width: 11rem;
+    }
+}
