@@ -38,7 +38,7 @@ function App() {
           <Route path="/search" exact>
             <Search />
           </Route>
-          <Route path='/login'>
+          <Route path='/auth'>
           <LoginPage />
         </Route>
         
@@ -61,5 +61,3 @@ function App() {
 export default App;
 
 
-// super Dark Grey : #1a1a1a
-// mediumGrey: #828282
