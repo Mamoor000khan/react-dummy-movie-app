@@ -61,11 +61,11 @@ export default function Nav() {
             <Grid className={classes.container}>
                 <Grid  className={classes.box}>
                     <Grid item xs={6} sm={9}  style={{textAlign: "initial"}}>
-                        <NavLink className={Classes.heading}  to="/trending">DEMO Streaming</NavLink>
+                        <NavLink className={Classes.heading}  to="/home">DEMO Streaming</NavLink>
                     </Grid>
                     <Grid item xs={2} sm={2} style={{width:'64px', height:'34px',marginTop:'17px',display:'flex', justifyContent: 'end'}}>
                         <Button style={{marginTop: '6px'}}>
-                        <Link className={Classes.signin} to='/auth'>   
+                        <Link className={Classes.signin} to='/login'>   
                           Log in
                           </Link>
                         </Button>

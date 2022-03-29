@@ -3,7 +3,7 @@ import './App.css';
 import { Route, Redirect } from 'react-router-dom';
 import Main from './components/UI/Main';
 import Nav from './components/Nav/Nav';
-import Header from './pages/Trending';
+import Header from './pages/Home';
 import DiscoverMovies from './pages/DiscoverMovies';
 import DiscoverTvSeries from './pages/DiscoverTvSeries';
 import Search from './pages/Search';
@@ -23,9 +23,9 @@ function App() {
           <Nav />
         </Route>
         <Route path="/" exact>
-          <Redirect to="/trending" />
+          <Redirect to="/home" />
         </Route>
-        <Route path="/trending">
+        <Route path="/home">
           <Header />
         </Route>
 
@@ -38,7 +38,7 @@ function App() {
           <Route path="/search" exact>
             <Search />
           </Route>
-          <Route path='/auth'>
+          <Route path='/login'>
           <LoginPage />
         </Route>
         

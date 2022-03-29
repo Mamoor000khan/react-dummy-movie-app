@@ -4,7 +4,7 @@ import Footer from '../components/Footer/Footer'
 import HeaderTop from '../components/Header/HeaderTop';
 import HeaderBottom from '../components/Header/HeaderBottom';
 
-function Trending() {
+function Home() {
 return (
         <div className={classes.Response}>
             <HeaderTop/>
@@ -14,4 +14,4 @@ return (
     )
 }
 
-export default Trending;
+export default Home;
