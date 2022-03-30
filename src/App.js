@@ -41,6 +41,9 @@ function App() {
           <Route path='/login'>
           <LoginPage />
         </Route>
+        <Route path='/signup'>
+          <LoginPage />
+        </Route>
         
 
         <Suspense fallback={''}>

@@ -48,7 +48,8 @@ const useStyles = makeStyles(() => ({
         alignItems: 'center',
 
         '&:hover':{
-            backgroundColor: '#1c1e1f'
+            backgroundColor: '#1c1e1f',
+            boxShadow: 'none',
         }
         
     },
@@ -70,9 +71,9 @@ export default function Nav() {
                           </Link>
                         </Button>
                     </Grid>
-                    <Grid item xs={2} sm={2} style={{width:'160px', height:'34px',marginTop:'10px'}}>
+                    <Grid item xs={2} sm={2} style={{width:'160px', height:'34px',marginTop:'10px',boxShadow: 'none'}}>
                         <Button >
-                        <Link className={Classes.signup} to='/auth'>    
+                        <Link className={Classes.signup} to='/Signup'>    
                           Start your free trial
                           </Link> 
                         </Button>
