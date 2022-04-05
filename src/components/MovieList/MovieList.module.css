@@ -1,5 +1,5 @@
 .MovieList {
-    width: 1224px;
+    width: 98%;
     display: grid;
     grid-template-columns: repeat(5 ,20%);
     /* grid-gap: 5rem 0; */
@@ -12,7 +12,7 @@
 }
 
 .MovieList a {
-    width: 226px;
+    width: 260px;
     height: 361px;
     text-decoration: none;
     cursor: pointer;

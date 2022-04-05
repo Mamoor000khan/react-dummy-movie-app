@@ -13,8 +13,8 @@ align-items: center;
     width: 1280px;
     display: block;
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     padding-left: 24px;
     padding-right: 24px;
 }
@@ -47,6 +47,7 @@ align-items: center;
 .bottombox{
     width: 100%;
     display: flex;
+    justify-content: space-between;
     /* // flexWrap: 'wrap',
     // boxSizing: 'border-box', */
 }

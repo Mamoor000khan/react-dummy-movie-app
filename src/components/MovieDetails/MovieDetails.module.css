@@ -36,6 +36,7 @@
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
+    margin-top:20px;
 }
 
 .infoBox {
@@ -143,7 +144,7 @@
     transition: all 1s ease-in-out;
 }
 .img:hover{
-    transform: perspective(1000px) rotateX(20deg) rotateY(20deg) scale3d(1, 1, 1);
+    transform: perspective(1000px)  rotateY(20deg) scale3d(1, 1, 1);
     
 }
 @media only screen and (max-width: 1400px) {

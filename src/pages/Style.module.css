@@ -15,8 +15,8 @@
     width: 1280px;
     display: block;
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     padding-left: 24px;
     padding-right: 24px;
 }
@@ -44,12 +44,13 @@
 .searchBox{
     width: 98%;
     display: block;
+    margin: auto;
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     padding-left: 24px;
     padding-right: 24px;
-    max-width: 1280px;
+    max-width: 100%;
     padding-bottom: 100px;
     /* margin-left: 6px; */
 }

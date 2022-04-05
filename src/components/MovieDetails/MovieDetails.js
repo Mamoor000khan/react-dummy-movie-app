@@ -11,11 +11,8 @@ const movieNoImg = 'https://www.movienewsletters.net/photos/000000h1.jpg';
 export default function MovieDetails(props) {
     
 return (
-    <div className={classes.MovieDetails} 
-     
-    >
-       
-      <Grid className={classes.container}>
+    <div className={classes.MovieDetails}>
+       <Grid className={classes.container}>
         <Grid className={classes.InnerContainer}>
           <Grid item xs={6} style={{width:'616px', minHeight: '517px', alignItems: 'center'}}>
            <Button  

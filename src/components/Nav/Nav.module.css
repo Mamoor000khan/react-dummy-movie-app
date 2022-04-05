@@ -7,11 +7,11 @@
 .container{
     padding-left: 24px;
     padding-right: 24px;
-    width: 1280px; 
+    width: 100%; 
     display: block;
     box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     height: 64px;
 }
 .box{

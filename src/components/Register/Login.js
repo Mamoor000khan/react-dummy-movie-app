@@ -74,7 +74,7 @@ const Login = () => {
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.container}>
           <img alt='' src={ICON} style={{width: '56px',height: '56px'}}/>
-        <h1 className={classes.heading}>{isLogin ? 'DEMO STREAMING' : 'Sign Up'}</h1>
+        <h1 className={classes.heading}>{ 'DEMO STREAMING' }</h1>
         <p className={classes.text}>Let's login to your account</p>
         <div className={classes.control}>
           <label htmlFor='email' className={classes.label}> Email</label>

@@ -41,7 +41,7 @@ const useStyles = makeStyles(() => ({
         fontSize: '13px',
         color: '#fff',
         backgroundColor: '#2b2b2b',
-        marginRight: '10px',
+        // marginRight: '10px',
         textDecoration:'none',
         display: 'flex',
         justifyContent: 'center',
