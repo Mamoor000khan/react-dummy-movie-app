@@ -7,13 +7,13 @@
     background-position: top !important;
 }
 .container {
-    width: 1280px;
+    width: 85%;
     height: 100%;
     display: block;
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 16px;
+    padding-left: 33px;
     padding-right: 16px;
     /* margin: auto;
     height: 517px;

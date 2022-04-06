@@ -43,7 +43,7 @@
 
 
 .Movie img {
-    width: 230px;
+    width: 280px;
     height: 320px;
     border-radius: 5px;
     color: inherit;
@@ -87,7 +87,7 @@
     max-width: 230px;
     display: flex;
     justify-content: start;
-    margin: auto;
+    /* margin: auto; */
     /* background-color: #2b2b2b; */
 }
 

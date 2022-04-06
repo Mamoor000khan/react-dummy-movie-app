@@ -1,14 +1,14 @@
 .MovieList {
-    width: 98%;
+    width: 85%;
     display: grid;
-    grid-template-columns: repeat(5 ,20%);
+    grid-template-columns: repeat(5 ,23%);
     /* grid-gap: 5rem 0; */
     justify-content: center;
     justify-items: center;
     /* padding-top: 1rem; */
     /* margin-bottom: 10rem; */
     backface-visibility: hidden;
-
+    margin: auto;
 }
 
 .MovieList a {

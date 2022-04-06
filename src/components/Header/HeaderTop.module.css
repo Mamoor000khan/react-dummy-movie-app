@@ -10,7 +10,8 @@
 }
 
 .container {
-    width: 1280px;
+    width: 85%;
+    margin: auto;
     display: block;
     box-sizing: border-box;
     /* margin-left: auto;

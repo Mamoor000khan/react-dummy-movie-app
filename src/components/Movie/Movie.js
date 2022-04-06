@@ -17,12 +17,12 @@ function Movie(props) {
 
 
     return (
-        <div>
+        <div style={{marginBottom:'20px'}} className={classes.Movie}>
            {   loading ?
              <ClipLoader style={{color:'#fff'}}  loading={loading}  size={20} />
              :
           
-          <Link id={props.id} to={`/${props.type === 'Tv Series' ? 'tv' : props.type.toLowerCase()}/${props.id}`} className={classes.Movie}>
+          <Link id={props.id} to={`/${props.type === 'Tv Series' ? 'tv' : props.type.toLowerCase()}/${props.id}`} >
                 <img src={props.image} className={classes.skeleton} alt="MovieImage" />
             <h3 className={classes.name}>{props.name}</h3>
            
