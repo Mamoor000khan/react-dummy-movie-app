@@ -14,9 +14,8 @@ export default function MovieDetails(props) {
   
     
 return (
-  
     <div className={classes.MovieDetails}
-    style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${BACKDROP_PATH}${props.details.image})`}}
+    style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${BACKDROP_PATH}${props.details.background})`}}
     >
        <Grid className={classes.container}>
         <Grid className={classes.InnerContainer}>

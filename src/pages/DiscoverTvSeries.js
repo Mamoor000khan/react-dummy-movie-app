@@ -40,7 +40,7 @@ return (
     
     <div className={classes.searchBox}>
     <Search />
-       <MovieList ShowPagination type='Movie' movies={fetchedTvSeries} />
+       <MovieList ShowPagination type='Tv Series' movies={fetchedTvSeries} />
        </div>
        <Footer/>
    </div>

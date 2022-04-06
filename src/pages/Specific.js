@@ -4,13 +4,9 @@ import MovieDetails from '../components/MovieDetails/MovieDetails';
 
 
 function Specific() {
-
     console.log('[specific.js]');
-
     const [fetchedDetailData, setFetchedDetailData] = useState();
-    const [movieCast, setMovieCast] = useState();
     const [youtubeVideo, setYoutubeVideo] = useState();
-    const [similar, setSimilar] = useState();
     const [loading, setLoading] = useState(false);
 
     const params = useParams();
@@ -25,7 +21,7 @@ function Specific() {
             setLoading(true);
             const res = await fetch(`https://api.themoviedb.org/3/${params.type}/${params.movieId}?api_key=847ab230a96a2f52bc3f647f23dc84a4&language=en-US`)
             const data = await res.json();
-            // console.log(data);
+             console.log(data);
             setFetchedDetailData({
                 title: data.title || data.original_title || data.name,
                 genres: data.genres,
@@ -35,17 +31,12 @@ function Specific() {
                 tagline: data.tagline,
                 rating: data.vote_average,
                 text: data.overview,
-                backgroung: data.backdrop_path
+                background: data.backdrop_path
             });
             setLoading(false);
         }
 
-        const fetchMovieCast = async () => {
-            setMovieCast(false);
-            const res = await fetch(`https://api.themoviedb.org/3/${params.type}/${params.movieId}/credits?api_key=847ab230a96a2f52bc3f647f23dc84a4&language=en-US`);
-            const data = await res.json();
-            setMovieCast(data.cast);
-        }
+        
 
 
         const fetchTrailerId = async () => {
@@ -54,18 +45,11 @@ function Specific() {
             setYoutubeVideo(data.results[data.results.length - 1]);
         }
 
-        const fetchSimilar = async () => {
-            // setSimilar(false);
-            const res = await fetch(`https://api.themoviedb.org/3/${params.type}/${params.movieId}/similar?api_key=847ab230a96a2f52bc3f647f23dc84a4&language=en-US`);
-            const data = await res.json();
-            setSimilar(data.results);
-        }
+    
 
         fetchDetail();
-        fetchMovieCast();
         fetchTrailerId();
-        fetchSimilar();
-        
+                
         document.getElementById('App') && document.getElementById('Nav').scrollIntoView({ behavior: 'smooth' });
 
     }, [params.movieId, params.type]);
@@ -76,11 +60,9 @@ return (
             {fetchedDetailData &&
                 <MovieDetails
                     text={fetchedDetailData.text}
-                    movieCastDetail={movieCast}
                     details={fetchedDetailData}
                     VideoId={youtubeVideo && youtubeVideo.key}
                     type={params.type}
-                    similar={similar}
                     loading={loading}
                 />}
 
