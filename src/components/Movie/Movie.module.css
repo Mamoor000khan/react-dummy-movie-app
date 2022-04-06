@@ -1,3 +1,20 @@
+.skeleton{
+    width: 230px;
+    height: 345px;
+    animation: skeleton-loading 1s linear infinite alternate;
+    opacity: 10;
+}
+
+@keyframes animation{
+    0%{
+        background-color: blanchedalmond;
+    }
+
+    100%{
+        background-color: rgb(255, 255, 90);
+    }
+}
+
 .Movie {
     width: 230px;
     height: 345px;

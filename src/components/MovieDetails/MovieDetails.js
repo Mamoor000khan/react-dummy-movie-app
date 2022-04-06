@@ -7,11 +7,17 @@ import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 const movieNoImg = 'https://www.movienewsletters.net/photos/000000h1.jpg';
+const BACKDROP_PATH = "https://image.tmdb.org/t/p/w1280";
 
 export default function MovieDetails(props) {
+  console.log(imgBaseUrl);
+  
     
 return (
-    <div className={classes.MovieDetails}>
+  
+    <div className={classes.MovieDetails}
+    style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${BACKDROP_PATH}${props.details.image})`}}
+    >
        <Grid className={classes.container}>
         <Grid className={classes.InnerContainer}>
           <Grid item xs={6} style={{width:'616px', minHeight: '517px', alignItems: 'center'}}>
