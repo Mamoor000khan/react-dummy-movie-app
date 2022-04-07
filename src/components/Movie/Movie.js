@@ -17,7 +17,7 @@ function Movie(props) {
 
 
     return (
-        <div style={{marginBottom:'20px'}} className={classes.Movie}>
+        <div style={{marginBottom:'40px'}} className={classes.Movie}>
            {   loading ?
              <ClipLoader style={{color:'#fff'}}  loading={loading}  size={20} />
              :

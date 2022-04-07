@@ -11,7 +11,7 @@ import SearchIcon from '@material-ui/icons/Search';
 const useStyles = makeStyles((theme) => ({
     grow: {
         backgroundColor: '#165595',
-        maxWidth: '98%',
+        // maxWidth: '98%',
         display: 'flex',
         zIndex: '1100',
         boxSizing: 'border-box',

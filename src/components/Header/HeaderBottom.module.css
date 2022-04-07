@@ -5,6 +5,7 @@
 }
 
 .root{
+    max-width: 1280px;
     max-width: 85%;
     margin: auto;
     display: block;

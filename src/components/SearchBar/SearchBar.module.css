@@ -1,5 +1,6 @@
-.root {    
-    width: 100%;
+.root {
+    max-width: 1280px;    
+    width: 96%;
     display: flex;
     z-index: 1100;
     box-sizing: border-box;
