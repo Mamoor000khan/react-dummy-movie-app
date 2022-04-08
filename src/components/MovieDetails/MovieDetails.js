@@ -37,11 +37,11 @@ return (
            </span>
                         
                     </Grid>
-                    <Grid style={{display:'flex', justifyContent:'space-between'}}>
+                    <Grid style={{color:'#fff', display:'flex', justifyContent:'space-between'}}>
                     <p
                       style={{display:'flex', alignItems:'center'}}
                     >
-                    <BookmarkBorderIcon marginRight= '10px'/> 
+                    <BookmarkBorderIcon  marginRight= '10px'/> 
                          Bookmark</p>
                          <button className={classes.TrailerBtn}>
                              <a color='#fff' href={`https://www.youtube.com/watch?v=${props.VideoId}`} target="_blank" rel="noreferrer" >Watch Trailer</a>

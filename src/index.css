@@ -1,13 +1,3 @@
-:root {
-  --primaryColorBluish: #212e4d; /* bluish */
-  --secondaryColorDark: #0b1422; /* dark */
-  --tertiaryColorWhite: #f5f6fa; /* white */
-  --quaternaryColorResish: #e84118; /* redish */
-  --quinaryColorLightBlue: #098fd5; /*blue */
-  --lightGrey: #ccc;
-  --darkGrey: #424141;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -41,13 +31,3 @@ code {
     font-size: 14px;
   }
 }
-
-
-
-/* 
-primary color: #212e4d; // bluish
-secondary color: #151f2d; // dark
-tertiary color: #f5f6fa; // white
-quaternary color: #e84118; // redish
-quinary color: #098fd5
-*/

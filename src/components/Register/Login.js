@@ -71,10 +71,10 @@ const Login = () => {
   return (
     <section className={classes.login}>
       
-      <form className={classes.form} onSubmit={submitHandler}>
+      <form className={classes.form} onSubm it={submitHandler}>
         <div className={classes.container}>
           <img alt='' src={ICON} style={{width: '56px',height: '56px'}}/>
-        <h1 className={classes.heading}>{ 'DEMO STREAMING' }</h1>
+        <h1 className={classes.heading}>{isLogin ? 'DEMO STREAMING' : 'Sign Up'}</h1>
         <p className={classes.text}>Let's login to your account</p>
         <div className={classes.control}>
           <label htmlFor='email' className={classes.label}> Email</label>
@@ -100,7 +100,7 @@ const Login = () => {
             className={classes.toggle}
             onClick={switchAuthModeHandler}
           >Don't have an account?
-            <a className={classes.a}  >{isLogin ? '  Register'  : ' Login with existing account'}</a>
+            <a href="login" className={classes.a}>{isLogin ? '  Register'  : ' Login with existing account'}</a>
           </p>
         </div>
         </div>

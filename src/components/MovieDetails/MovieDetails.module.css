@@ -51,7 +51,8 @@
     min-width: 50%;
     font-weight: 500;
     margin-bottom: 30px;
-    text-align: initial
+    text-align: initial;
+    color: #fff;
 }
 .title{
     margin-bottom: 15px;
@@ -72,8 +73,8 @@
     padding: 0;
     line-height: 1.8;
     text-transform: capitalize;
-    text-align: initial
-
+    text-align: initial;
+    color: #fff
 }
 
 .TrailerBtn {

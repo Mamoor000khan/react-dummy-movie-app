@@ -11,7 +11,7 @@ import SearchIcon from '@material-ui/icons/Search';
 const useStyles = makeStyles((theme) => ({
     grow: {
         backgroundColor: '#165595',
-        // maxWidth: '98%',
+        maxWidth: '100%',
         display: 'flex',
         zIndex: '1100',
         boxSizing: 'border-box',
@@ -62,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        color:'#fff'
     },
     inputRoot: {
         color: 'inherit',
@@ -115,7 +116,7 @@ export default function SearchBar(props) {
                             <SearchIcon />
                         </div>
                         <InputBase
-                        
+                            style={{color:'#fff'}}
                             placeholder="Search…"
                             classes={{
                                 root: classes.inputRoot,
@@ -131,7 +132,7 @@ export default function SearchBar(props) {
                         
                         <IconButton  color="inherit">
                             <Badge  color="secondary">
-                                <BookmarkIcon />
+                                <BookmarkIcon style={{color:'#fff'}}/>
                             </Badge>
                         </IconButton>
                         
