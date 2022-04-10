@@ -5,6 +5,7 @@ import MovieList from '../components/MovieList/MovieList';
 import Search from './Search';
 import Footer from '../components/Footer/Footer';
 import classes from './Style.module.css';
+import Nav from '../components/Nav/Nav';
 
 function DiscoverTvSeries() {
     // const ctx = useContext(AuthContext);
@@ -26,7 +27,7 @@ function DiscoverTvSeries() {
     }, [genreId,])
 return (
         <div>
-        {/* <Nav/> */}
+          <Nav/> 
         <header className={classes.header}>
        <div className={classes.container}>
            <div className={classes.box}> 

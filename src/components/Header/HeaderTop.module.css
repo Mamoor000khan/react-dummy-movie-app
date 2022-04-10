@@ -1,22 +1,21 @@
 .header {
-    min-width: 100%;
+   width: 100%;
     border-radius: unset;
     background-color: #2b2b2b;
     height: 64px;
     border: none;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     /* margin-top: 14px; */
     box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 60%);
 }
 
 .container {
     max-width: 1280px;
-    width: 85%;
-    margin: auto;
+    width: 100%;
     display: block;
     box-sizing: border-box;
-    /* margin-left: auto;
-    margin-right: auto; */
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 24px;
     padding-right: 24px;
 }
@@ -30,13 +29,16 @@
     
 }
 .title {
+    width: 170px;
+    height: 36px;
+    font-size: 1.4285714285714284rem !important;
+    font-family: 'Work Sans', sans-serif !important;
+    font-weight: 500 !important;
     color: #fff;
-    font-size: 25px;
-    letter-spacing: 1px;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
     text-transform: capitalize;
-    line-height: 1.6;
-    margin-left: 8px;    
+    line-height: 1.6 !important;
+    margin: 0px !important;
+    letter-spacing: 1px;
+    text-align: start;    
 }
 

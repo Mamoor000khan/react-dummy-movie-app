@@ -19,9 +19,9 @@ function App() {
     <div id="App" className="App">
       {/* <Nav /> */}
       <Main>
-        <Route path="/">
+        {/* <Route path="/">
           <Nav />
-        </Route>
+        </Route> */}
         <Route path="/" exact>
           <Redirect to="/home" />
         </Route>

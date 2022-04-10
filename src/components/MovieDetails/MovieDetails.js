@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
+import Tilt from 'react-parallax-tilt';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 const movieNoImg = 'https://www.movienewsletters.net/photos/000000h1.jpg';
@@ -49,9 +50,16 @@ return (
                          </Grid>
         </Grid>
         <Grid item xs={6} className={classes.ImageContainer}>
-            <div>
-        <img className={classes.img} src={props.details.image ? `${imgBaseUrl}/${props.details.image}` : movieNoImg} alt="movieImg" style={{ filter: props.loading ? 'blur(3px)' : 'blur(0)' }}/>
-        </div>
+        <Tilt
+      className={classes.parallaxEffectGlareScale}
+      perspective={500}
+      glareEnable={true}
+      glareMaxOpacity={0.45}
+      scale={1.02}
+      gyroscope={true}
+    >
+        <img  className={classes.img} src={props.details.image ? `${imgBaseUrl}/${props.details.image}` : movieNoImg} alt="movieImg" style={{ filter: props.loading ? 'blur(3px)' : 'blur(0)' }}/>
+        </Tilt>
         </Grid>
         </Grid>
       </Grid>

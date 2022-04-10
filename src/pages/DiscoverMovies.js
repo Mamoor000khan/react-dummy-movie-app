@@ -4,6 +4,7 @@ import MovieList from '../components/MovieList/MovieList';
 import classes from './Style.module.css';
 import Search from './Search';
 import Footer from '../components/Footer/Footer';
+import Nav from '../components/Nav/Nav';
 
 function DiscoverMovies() {
     
@@ -25,6 +26,7 @@ function DiscoverMovies() {
 
     return (
          <div>
+             <Nav/>
              <header className={classes.header}>
             <div className={classes.container}>
                 <div className={classes.box}> 

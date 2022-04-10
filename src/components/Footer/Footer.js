@@ -15,26 +15,26 @@ export default function Footer() {
                 <div className={classes.root} >
                     <Grid className={classes.container}>
                     
-        <Grid item xs={2} style={{borderRight: '1px solid #fff', maxWidth:'67px', height:'20px',marginRight: '4px'}}>
+        <Grid className={classes.text}  item xs={2} style={{borderRight: '1px solid #fff', maxWidth:'50px', height:'16px',marginRight: '12px'}}>
         Home
         </Grid>
-        <Grid item xs={2} style={{borderRight: '1px solid #fff', maxWidth:'170px', height:'20px',marginRight: '4px'}}>
+        <Grid className={classes.text} item xs={2} style={{borderRight: '1px solid #fff', maxWidth:'160px', height:'20px',marginRight: '12px'}}>
         Terms and Conditions
         </Grid>
-        <Grid item xs={2} sm={2} style={{borderRight: '1px solid #fff', maxWidth:'112px', height:'20px',marginRight: '4px'}}>
+        <Grid className={classes.text} item xs={2} sm={2} style={{borderRight: '1px solid #fff', maxWidth:'112px', height:'20px',marginRight: '12px'}}>
         Privacy Policy
         </Grid>
-        <Grid item xs={2} sm={2} style={{borderRight: '1px solid #fff', maxWidth:'160px', height:'20px',marginRight: '4px'}}>
+        <Grid className={classes.text} item xs={2} sm={2} style={{borderRight: '1px solid #fff', maxWidth:'160px', height:'20px',marginRight: '12px'}}>
         Collection Statement
         </Grid>
-        <Grid item xs={2} sm={2} style={{borderRight: '1px solid #fff', maxWidth:'56px', height:'20px',marginRight: '10px'}}>
+        <Grid className={classes.text} item xs={2} sm={2} style={{borderRight: '1px solid #fff', maxWidth:'56px', height:'20px',marginRight: '12px'}}>
         Help
         </Grid>
-        <Grid item xs={2} sm={2} style={{ maxWidth:'116px', height:'20px',marginRight: '4px'}}>
+        <Grid className={classes.text} item xs={2} sm={2} style={{ maxWidth:'116px', height:'20px',marginRight: '4px'}}>
         Manage Account
         </Grid>
     </Grid>
-            <span className={classes.text}>
+            <span className={classes.heading}>
                       Copyright © 2020 DEMO Streaming. All Rights Reserved.
                     </span>
                 </div>

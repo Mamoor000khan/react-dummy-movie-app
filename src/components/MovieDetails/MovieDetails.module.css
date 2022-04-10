@@ -143,12 +143,35 @@
     display: cover;
     /* transform-style: preserve-3d;
     perspective: 1000px; */
-    transition: all 1s ease-in-out;
-}
-.img:hover{
-    transform: perspective(1000px)  rotateY(20deg) scale3d(1, 1, 1);
     
 }
+/* .img:hover{
+    transform: rotateX(-20deg) rotateY(20deg);
+   
+    
+} */
+
+.parallaxEffectGlareScale {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: repeating-linear-gradient(
+      45deg,
+      $default-stripe-color,
+      $default-stripe-color 35px,
+      $default-stripe-bg-color 35px,
+      $default-stripe-bg-color 70px
+    ); */
+    width: 342px;
+    height: 513px;
+    /* background-color: darkgreen; */
+    /* color: white; */
+    /* border: 5px solid black;
+    border-radius: 20px; */
+  
+    transform-style: preserve-3d;
+} 
 @media only screen and (max-width: 1400px) {
     .InnerContainer {
         padding: 2rem 0;

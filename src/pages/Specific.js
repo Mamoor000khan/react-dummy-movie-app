@@ -50,7 +50,7 @@ function Specific() {
         fetchDetail();
         fetchTrailerId();
                 
-        document.getElementById('App') && document.getElementById('Nav').scrollIntoView({ behavior: 'smooth' });
+        // document.getElementById('App') && document.getElementById('Nav').scrollIntoView({ behavior: 'smooth' });
 
     }, [params.movieId, params.type]);
 

@@ -8,7 +8,7 @@ export default function Header() {
         <header className={classes.header}>
             <div className={classes.container}>
                 <div className={classes.box}> 
-                    <Typography style={{fontSize:'20px',marginLeft: '8px',}} className={classes.title}>
+                    <Typography variant="h6"  className={classes.title}>
                        Popular Titles
                     </Typography>
                 </div>
