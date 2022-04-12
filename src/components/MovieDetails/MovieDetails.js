@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import Tilt from 'react-parallax-tilt';
-import Paper from '@material-ui/core/Paper';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 const movieNoImg = 'https://www.movienewsletters.net/photos/000000h1.jpg';
@@ -23,35 +22,7 @@ return (
        <Grid className={classes.container}>
         <Grid className={classes.InnerContainer}>
           <Grid item xs={6} style={{width:'616px', minHeight: '517px', alignItems: 'center'}}>
-           {/* <Button  className={classes.backButton}
-             
-           >
-             <KeyboardBackspaceIcon  />
-              Back
-           </Button>
-        <Grid className={classes.infoBox}>
-           <span className={classes.smallDetails}>
-                             <p style={{margin:'0px'}}> {props.details.release_date}</p>
-                             <p style={{margin:'0px'}}> {Math.ceil(props.details.rating)} / 10</p>
-           </span> 
-           <span className={classes.MovieText}>
-                <h4 className={classes.title}> {props.details.title}</h4>
-                      <p><b></b> {props.text}</p>
-           </span>
-                        
-                    </Grid>
-                    <Grid style={{color:'#fff', display:'flex', justifyContent:'space-between'}}>
-                    <p
-                      style={{display:'flex', alignItems:'center'}}
-                    >
-                    <BookmarkBorderIcon  marginRight= '10px'/> 
-                         Bookmark</p>
-                         <button className={classes.TrailerBtn}>
-                             <a color='#fff' href={`https://www.youtube.com/watch?v=${props.VideoId}`} target="_blank" rel="noreferrer" >Watch Trailer</a>
-                         </button>
-                         </Grid> */}
-
-       <Grid item xs={12} >
+           <Grid item xs={12} >
              <Button className={classes.backButton}>
                <KeyboardBackspaceIcon  />
                 Back

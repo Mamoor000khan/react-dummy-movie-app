@@ -28,51 +28,19 @@
     margin: 0;
     box-sizing: border-box;
     padding:8px;
-    /* max-width: 1248px;
-    display: flex;
-     justify-content: center; 
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    max-height: 355px; */
-}
+  }
  
 .paper {
     width: 230px;
     height: 345px;  
     background-color:  #2b2b2b !important;
     border-radius: 0px; 
-    /* // backgroundColor: '#2f3234',
-    // padding: '8px', */
-   /* border: 0;
-    cursor: pointer;
-    margin: 0;
-    display: grid;
-    outline: 0;
-    padding: 0;
-    position: relative;
-    align-items: center;
-    user-select: none;
-    border-radius: 0;
-    vertical-align: middle;
-    /* moz-appearance: none; */
-    /*justify-content: center;
-    text-decoration: none;
-    background-color: #2b2b2b;
-    -webkit-appearance: none;
-    box-shadow: rgb(0 0 0 / 50%) 0px 8px 15px;*/
-    /* // webkitTapHighlightColor: 'transparent', */
-     
 }
 .button{
     width: 230px; 
     height: 320px;
-    /* box-shadow: rgb(0 0 0 / 50%) 0px 8px 15px; */
-
-}
-.button:hover{
     
 }
-
 .cardContent{
     width:230px; 
     min-height: 179px !important;
