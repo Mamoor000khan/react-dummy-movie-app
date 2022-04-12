@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '20px',
     },
     toolBar: {
+        maxWidth:'100%',
         padding: '0px 15px',
         minHeight: '48px',
         display: 'flex',

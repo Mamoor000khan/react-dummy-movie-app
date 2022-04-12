@@ -8,6 +8,7 @@ import DiscoverMovies from './pages/DiscoverMovies';
 import DiscoverTvSeries from './pages/DiscoverTvSeries';
 import Search from './pages/Search';
 import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
 
 const Specific = React.lazy(() => import('./pages/Specific'));
 const NotFound = React.lazy(() => import('./components/UI/NotFound'));
@@ -42,7 +43,7 @@ function App() {
           <LoginPage />
         </Route>
         <Route path='/signup'>
-          <LoginPage />
+          <SignUpPage />
         </Route>
         
 

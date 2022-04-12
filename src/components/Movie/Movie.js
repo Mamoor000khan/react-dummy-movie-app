@@ -30,6 +30,7 @@ function Movie(props) {
             
             </Link>
          }
+         
         </div>
     );
 }

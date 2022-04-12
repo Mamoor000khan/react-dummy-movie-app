@@ -76,13 +76,13 @@ export default function Nav() {
                           </Link> 
                         </Button>
                     </Grid> */}
-                    <Grid style={{display: 'flex', position: 'relative',alignItems: 'center'}}>
-                        <Typography variant="h5" style={{textAlign: "initial", width:'993px',}}>
+                    <Grid style={{display: 'flex', position: 'relative',alignItems: 'center',maxWidth:'100%'}}>
+                        <Typography variant="h5" style={{textAlign: "initial", width:'990px',}}>
                         <NavLink className={classes.heading}  to="/home">DEMO Streaming</NavLink>
                         </Typography>
 
-                    <Button   href="#contained-buttons" style={{  width: '64px',
-        height: '34px',padding:'4px 5px',marginRight:'16px'}}>
+                    <Button   href="#contained-buttons" style={{width: '64px',
+                            height: '34px',padding:'4px 5px',marginRight:'16px'}}>
                     <Link className={classes.signin} to='/login'>   
                           Log in
                           </Link>

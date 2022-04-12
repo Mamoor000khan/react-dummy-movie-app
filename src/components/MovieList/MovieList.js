@@ -15,7 +15,7 @@ function MovieList(props) {
          <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure />
          <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure />
          <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure />
-         <DummyMovieStructure /> 
+         <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure />  
         </Fragment>
     }
 
@@ -29,8 +29,10 @@ return (
                 })
                     :
                       <DummyMovie />
+                      
             
             }
+            
         </div>
     );
 }
