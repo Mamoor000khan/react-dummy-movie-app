@@ -45,6 +45,7 @@ import { NavLink } from 'react-router-dom';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Paper from '@material-ui/core/Paper';
 import CardContent from '@material-ui/core/CardContent';
+import { Typography } from '@material-ui/core';
 
 //const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -73,16 +74,18 @@ return (
           focusRipple
           >
               
-               <CardContent className={classes.cardContent}>
-               
-                     <img alt='' src={Img} className={classes.image}/>
+  <CardContent className={classes.cardContent}>
+                  <img alt='' src={Img} className={classes.image}/>
                         <p className={classes.text}>Movies</p>
                            
                 </CardContent>
                 
           </ButtonBase>
           </Paper>
-          </NavLink>  
+          </NavLink>
+          <Typography className={classes.title}>
+                                Popular Movies
+          </Typography>  
           </Grid>
 
 
@@ -104,6 +107,9 @@ return (
           </ButtonBase>
           </Paper>
           </NavLink>  
+          <Typography className={classes.title}>
+                                Popular Series
+                     </Typography>
           </Grid>
           {/* <Grid>
           <Paper className={classes.paper} />

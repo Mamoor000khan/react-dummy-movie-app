@@ -1,6 +1,6 @@
 .HeaderBottom {
     max-width: 1280px;
-    height: 384px;
+    height: 550px;
     width: 100%;
     display: block;
     box-sizing: border-box;
@@ -13,7 +13,7 @@
 
 .root{
     max-width:1248px !important;
-    height: 361px;
+    height: 383px;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
@@ -109,14 +109,17 @@
     top:50%;
 }
 
-/* .title{
-    font-weight: 600;
-    margin-top: 5px;
+.title{
+    font-weight: 600 !important;
+    margin-top: 5px  !important;
     color: rgb(255, 255, 255);
-    max-width: 113px;
-    font-size: 14px;
-    font-family: Work Sans, sans-serif;
-    line-height: 1.43;
-} */
+    max-width: 230px;
+        font-size: 14px  !important;
+    font-family: 'Work Sans', sans-serif  !important;
+    line-height: 1.43  !important;
+    margin:0px  !important;
+    text-align: left  !important;
+    margin-top: 5px  !important;
+}
 
 

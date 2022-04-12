@@ -110,10 +110,6 @@
 
 // export default Login;
 
-
-
-
-
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import classes from './Signup.module.css';
@@ -127,23 +123,23 @@ export default function Login() {
     <div className={classes.login}>
       <Container className={classes.container}>
         <Paper className={classes.paper}>
-        <Grid container spacing={3}>
-        <Grid item xs={12} style={{marginBottom:'30px'}}>
-          <LocalMoviesIcon style={{fontSize:'56px', color:'#fff'}}/>
-          <p className={classes.heading}>Demo Streaming</p>
-          <p className={classes.text}>Let's login to your account</p>
+         <Grid container spacing={3}>
+           <Grid item xs={12} style={{marginBottom:'30px'}}>
+            <LocalMoviesIcon style={{fontSize:'56px', color:'#fff'}}/>
+             <p className={classes.heading}>Demo Streaming</p>
+          <p className={classes.text}>create your account</p>
         </Grid>
 
 
         <Grid item xs={12} className={classes.control}>
         <label htmlFor='email' className={classes.label}>Email</label>
         <input type='email' placeholder="your Email" id='email'  style={{marginBottom:'20px'}}/>
-        {/* 
+        
         <label htmlFor='password' className={classes.label}>Password</label>
-        <input type='password' placeholder="your password" id='password'  style={{marginBottom:'20px'}}/> */}
+        <input type='password' placeholder="your password" id='password'  style={{marginBottom:'20px'}}/>
         
         <Button variant="contained" className={classes.button}>
-                  Next
+                  Submit
             </Button>
         
         </Grid>
