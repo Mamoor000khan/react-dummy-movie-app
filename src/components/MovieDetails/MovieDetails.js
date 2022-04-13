@@ -12,6 +12,8 @@ const BACKDROP_PATH = "https://image.tmdb.org/t/p/w1280";
 
 export default function MovieDetails(props) {
   console.log(imgBaseUrl);
+
+  
   
   
     

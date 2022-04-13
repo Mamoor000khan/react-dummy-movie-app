@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import './App.css';
 import { Route, Redirect } from 'react-router-dom';
 import Main from './components/UI/Main';
-import Nav from './components/Nav/Nav';
+
 import Header from './pages/Home';
 import DiscoverMovies from './pages/DiscoverMovies';
 import DiscoverTvSeries from './pages/DiscoverTvSeries';
@@ -10,8 +10,10 @@ import Search from './pages/Search';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 
+import LoggedIn from './pages/LoggedIn';
+
 const Specific = React.lazy(() => import('./pages/Specific'));
-const NotFound = React.lazy(() => import('./components/UI/NotFound'));
+// const NotFound = React.lazy(() => import('./components/UI/NotFound'));
 
 function App() {
 
@@ -41,9 +43,13 @@ function App() {
           </Route>
           <Route path='/login'>
           <LoginPage />
+          
         </Route>
         <Route path='/signup'>
           <SignUpPage />
+        </Route>
+        <Route path='/loggedin'>
+          <LoggedIn />
         </Route>
         
 
@@ -51,9 +57,9 @@ function App() {
           <Route path="/:type/:movieId" exact>
             <Specific />
           </Route>
-          <Route path="/:type/:movieId/notfound">
+          {/* <Route path="/:type/:movieId/notfound">
             <NotFound />
-          </Route>
+          </Route> */}
         </Suspense> 
 
       </Main>

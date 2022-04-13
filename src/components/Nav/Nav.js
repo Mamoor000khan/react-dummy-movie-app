@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 
+
 const useStyles = makeStyles(() => ({
     // heading: {
     //     width: '250px',
@@ -81,6 +82,7 @@ export default function Nav() {
                         <NavLink className={classes.heading}  to="/home">DEMO Streaming</NavLink>
                         </Typography>
 
+                        
                     <Button   href="#contained-buttons" style={{width: '64px',
                             height: '34px',padding:'4px 5px',marginRight:'16px'}}>
                     <Link className={classes.signin} to='/login'>   

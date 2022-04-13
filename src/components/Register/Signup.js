@@ -110,19 +110,58 @@
 
 // export default Login;
 
-import React from 'react';
+
+
+import React, { useRef, useState } from "react"
 import Container from '@material-ui/core/Container';
 import classes from './Signup.module.css';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import LocalMoviesIcon from '@material-ui/icons/LocalMovies';
 import Button from '@material-ui/core/Button';
+import { CryptoState } from "../../store/auth-context";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../Firebase";
+import { useHistory } from 'react-router-dom';
 
-export default function Login() {
+
+
+export default function Signup(handleClose) {
+ const [email, setEmail] = useState("");
+ const [password, setPassword] = useState("");     
+ 
+ const history = useHistory();
+
+//  const [setAlert] = CryptoState();
+
+const handleSubmit = async() => {
+  
+  try {
+    const result = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    //  setAlert ({
+    //    open: true,
+    //    message:`Sign Up Successful. Welcome ${result.user.email}`,
+    //    type:'sucess'
+    //  });
+    history.replace('/');
+        
+   }catch (error){
+    // setAlert ({
+    //   open: true,
+    //   message: error.message,
+    //   type:'error'
+    // });
+    return;
+   }
+}
+
   return (
     <div className={classes.login}>
       <Container className={classes.container}>
-        <Paper className={classes.paper}>
+        <form className={classes.paper}>
          <Grid container spacing={3}>
            <Grid item xs={12} style={{marginBottom:'30px'}}>
             <LocalMoviesIcon style={{fontSize:'56px', color:'#fff'}}/>
@@ -132,13 +171,29 @@ export default function Login() {
 
 
         <Grid item xs={12} className={classes.control}>
-        <label htmlFor='email' className={classes.label}>Email</label>
-        <input type='email' placeholder="your Email" id='email'  style={{marginBottom:'20px'}}/>
+        <label  htmlFor='email'  className={classes.label}>Email</label>
+        <input
+        value={email} 
+        onChange={(e) => setEmail(e.target.value)} 
+        type='email' 
+        placeholder="your Email" 
+        id='email'  
+        style={{marginBottom:'20px'}}/>
         
         <label htmlFor='password' className={classes.label}>Password</label>
-        <input type='password' placeholder="your password" id='password'  style={{marginBottom:'20px'}}/>
+        <input
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        type='password'  
+        placeholder="your password" 
+        id='password'  
+        style={{marginBottom:'20px'}}/>
         
-        <Button variant="contained" className={classes.button}>
+        <Button  
+         
+        onClick={handleSubmit}
+        variant="contained" 
+        className={classes.button} >
                   Submit
             </Button>
         
@@ -153,11 +208,76 @@ export default function Login() {
         </Grid>
         
       </Grid>
-        </Paper>
+        </form>
       </Container>
     </div>
   );
 }
+
+// import React, { useRef, useState } from "react"
+// import { Form, Button, Card, Alert } from "react-bootstrap"
+// import { useAuth } from "../contexts/AuthContext"
+// import { Link, useHistory } from "react-router-dom"
+
+// export default function Signup() {
+//   const emailRef = useRef()
+//   const passwordRef = useRef()
+//   const passwordConfirmRef = useRef()
+//   const { signup } = useAuth()
+//   const [error, setError] = useState("")
+//   const [loading, setLoading] = useState(false)
+//   const history = useHistory()
+
+//   async function handleSubmit(e) {
+//     e.preventDefault()
+
+//     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+//       return setError("Passwords do not match")
+//     }
+
+//     try {
+//       setError("")
+//       setLoading(true)
+//       await signup(emailRef.current.value, passwordRef.current.value)
+//       history.push("/")
+//     } catch {
+//       setError("Failed to create an account")
+//     }
+
+//     setLoading(false)
+//   }
+
+//   return (
+//     <>
+//       <Card>
+//         <Card.Body>
+//           <h2 className="text-center mb-4">Sign Up</h2>
+//           {error && <Alert variant="danger">{error}</Alert>}
+//           <Form onSubmit={handleSubmit}>
+//             <Form.Group id="email">
+//               <Form.Label>Email</Form.Label>
+//               <Form.Control type="email" ref={emailRef} required />
+//             </Form.Group>
+//             <Form.Group id="password">
+//               <Form.Label>Password</Form.Label>
+//               <Form.Control type="password" ref={passwordRef} required />
+//             </Form.Group>
+//             <Form.Group id="password-confirm">
+//               <Form.Label>Password Confirmation</Form.Label>
+//               <Form.Control type="password" ref={passwordConfirmRef} required />
+//             </Form.Group>
+//             <Button disabled={loading} className="w-100" type="submit">
+//               Sign Up
+//             </Button>
+//           </Form>
+//         </Card.Body>
+//       </Card>
+//       <div className="w-100 text-center mt-2">
+//         Already have an account? <Link to="/login">Log In</Link>
+//       </div>
+//     </>
+//   )
+// }
 
 
 
