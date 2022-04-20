@@ -6,6 +6,7 @@ import Search from './Search';
 import Footer from '../components/Footer/Footer';
 import classes from './Style.module.css';
 import Nav from '../components/Nav/Nav';
+import HeaderTop from '../components/Header/HeaderTop';
 
 function DiscoverTvSeries() {
     // const ctx = useContext(AuthContext);
@@ -26,25 +27,22 @@ function DiscoverTvSeries() {
         
     }, [genreId,])
 return (
-        <div>
-          <Nav/> 
-        <header className={classes.header}>
-       <div className={classes.container}>
-           <div className={classes.box}> 
-               <h6 style={{marginLeft: '8px',}} className={classes.title}>
-                  Movies
-               </h6>
-           </div>
-       </div>
-   </header>
+    <div>
+    <Nav/>
+   <HeaderTop text="Movies"/>
+
+  <div className={classes.searchBox}>
+     <Search 
+ placeholder={'Search Series'}
+ />
+ <MovieList ShowPagination type='Tv Series' movies={fetchedTvSeries} />
+   </div>
+   <Footer/>
+</div>
        
     
-    <div className={classes.searchBox}>
-    <Search />
-       <MovieList ShowPagination type='Tv Series' movies={fetchedTvSeries} />
-       </div>
-       <Footer/>
-   </div>
+    
+ 
     )
 }
 

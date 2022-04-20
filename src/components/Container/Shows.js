@@ -1,65 +1,20 @@
-import React, { useEffect, useState } from 'react'
-// import AuthContext from '../store/auth-context';
-import MovieList from '../components/MovieList/MovieList';
-import classes from './Style.module.css';
-import Search from './Search';
-import Footer from '../components/Footer/Footer';
-import Nav from '../components/Nav/Nav';
-import HeaderTop from '../components/Header/HeaderTop';
-
-function DiscoverMovies(props) {
-    
-    // const ctx = useContext(AuthContext);
-    const [fetchedMovies, setFetchedMovies] = useState();
-    const [genreId, setGenreId] = useState('');
-
-    useEffect(() => {
-        const fetchMovies = async () => {
-            setFetchedMovies(false);
-            const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=847ab230a96a2f52bc3f647f23dc84a4&language=en-US&sort_by=popularity.desc`);
-            const data = await res.json();
-            setFetchedMovies(data.results);
-            console.log(data);
-        }
-        
-        fetchMovies();
-    }, [genreId, ])
-
-    return (
-         <div>
-             <Nav/>
-            <HeaderTop text="Movies"/>
-        
-        <div className={classes.searchBox}>
-         <Search 
-          placeholder={'Search Movies'}
-          />
-        <MovieList   type='Movie' movies={fetchedMovies} />
-            </div>
-            <Footer/>
-        </div>
-    )
-}
-
-export default DiscoverMovies;
-
 // import React, { useEffect, useState } from 'react';
-// // import { connect } from 'react-redux';
-// // import { AppState } from '../store/reducers';
-// // import { ThunkDispatch } from 'redux-thunk';
-// // import * as actionCreator from '../store/actions/shows';
-// // import { RouteComponentProps, withRouter } from 'react-router-dom';
+// import { connect } from 'react-redux';
+// import { AppState } from '../store/reducers';
+// import { ThunkDispatch } from 'redux-thunk';
+// import * as actionCreator from '../store/actions/shows';
+// import { RouteComponentProps, withRouter } from 'react-router-dom';
 // import { v4 as uuid } from 'uuid';
-// // import { AppActions } from '../store/actions/types';
+// import { AppActions } from '../store/actions/types';
 
 // import { Container, Grid, makeStyles } from '@material-ui/core';
 
-// import TopBar from '../components/Header/HeaderTop';
-// import ShowsCard from '../components/Header/HeaderBottom';
-// import SkeletonLoader from '../components/Skeleton/Skeleton';
-// import SearchBar from '../components/SearchBar/SearchBar';
+// import TopBar from '../Header/HeaderTop';
+// import ShowsCard from '../Header/HeaderBottom';
+// import SkeletonLoader from '../Skeleton/Skeleton';
+// import SearchBar from '../SearchBar/SearchBar';
 
-// import emptyImg from '../Assets/Image/SVG/empty.svg';
+// import emptyImg from '../../Assets/Image/SVG/empty.svg';
 
 // // type OwnProps = {};
 
@@ -83,7 +38,7 @@ export default DiscoverMovies;
     
 //     useEffect(() => {
 //         // Getting category from query param
-//         const queryParams = new (props.location.search);
+//         const queryParams = new URLSearchParams(props.location.search);
 //         const showsCategory = queryParams.get('category');
 
 //         // Set category name to state ( To use it as a prop for topbar)
@@ -166,4 +121,3 @@ export default DiscoverMovies;
 //         </section>
 //     );
 // };
-

@@ -1,123 +1,128 @@
-// import React from 'react';
-// import Grid from '@material-ui/core/Grid';
-// import { Typography } from '@material-ui/core';
-// import Img from '../../Assets/Image/photo.svg';
-// import { NavLink } from 'react-router-dom';
-// import classes from './HeaderBottom.module.css';
+import React, { useState } from 'react';
+import {  Card, CardContent, Typography, makeStyles, Box, ButtonBase, CircularProgress } from '@material-ui/core';
+import Img from '../../Assets/Image/SVG/film.svg';
 
-
-// export default function HeaderBottom() {
-//     // const classes = useStyles();
-//     return (
-//         <div className={classes.HeaderBottom}>
-//         <Grid  className={classes.root}>
-//             <Grid  className={classes.container} >
-//                 <div style={{padding:'8px'}}>
-//                     <NavLink className={classes.paper} to="/movies">
-//                     <img alt='' src={Img} className={classes.image}/>
-//                         <p className={classes.imageOverlay}>movies</p>
-//                     </NavLink>        
-//                     <Typography className={classes.title}>
-//                                Popular Movies
-//                     </Typography>
-//                 </div>
-//                 <div style={{padding:'8px'}}>
-//                     <NavLink className={classes.paper} to="/tvseries">
-//                         <img alt='' src={Img} className={classes.image}/>
-//                         <p className={classes.imageOverlay}>Series</p>
-//                     </NavLink>
-//                     <Typography className={classes.title}>
-//                                Popular Series
-//                     </Typography>
-//                 </div>
-                    
-//             </Grid>
-//         </Grid>
-//         </div>
-//     );
+// type OwnProps = {
+//   cardTitle: string;
+//   link?: string; 
+//   genreTitle?: string;
+//   isGenre?: boolean; // Whether it is a genre card or movie/series card
+//   imgUrl?: string;
+//   routeProps?: RouteComponentProps;
+//   width?: number;
+//   height?: number;
 // }
 
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import classes from './HeaderBottom.module.css';
-import Img from '../../Assets/Image/photo.svg';
-import { NavLink } from 'react-router-dom';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Paper from '@material-ui/core/Paper';
-import CardContent from '@material-ui/core/CardContent';
-import { Typography } from '@material-ui/core';
+// type Props = OwnProps
 
-//const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   paper: {
-//     height: 140,
-//     width: 100,
-//   },
-//   control: {
-//     padding: theme.spacing(2),
-//   },
-// }));
+const useStyles = makeStyles((theme) => ({
+  showsCard:{
+      background: theme.palette.secondary.main,
+      width: 230,
+      height:  320,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundSize: 'contain',
+      position:'relative',
+      '&:hover': {
+          "& $showsGenre":{
+              top:'50%',
+              opacity:1,
+          },
+          "& $showsImg": {
+              filter: 'brightness(.9)'
+          }
+      }
+  },
+  categoryImg: {
+      width: '70%',
+      margin:'auto',
+      height: '100%',
+      objectFit: 'cover',
+  },
+  showsCardContent: {
+      padding: '30px !important', 
+      display: 'flex',
+      justifyContent: 'center',
+  },
+  showsGenre: {
+      position:'absolute',
+      zIndex: 100,
+      fontSize: 35,
+      fontWeight: 600,
+      color: '#fff',
+      top: '70%',
+      opacity: 0,
+      left: '50%',
+      transform:'translate(-50%, -50%)',
+      transition: 'all .3s',
+      textAlign:'left'
+  },
+  showsImg: {
+      position:'absolute',
+      top: 0,
+      left:0,
+      width:'100%',
+      height:'100%',
+      objectFit: 'cover',
+  }
+}));
 
-export default function SpacingGrid() {
+
+
+export default function SpacingGrid(props) {
+  const { showsCard, showsCardContent, showsGenre, categoryImg, showsImg } = useStyles(props);
+
+  const [isImgLoading, setImgLoading] = useState(true);
+
+  const onImgLoadHandler = () => {
+    setImgLoading(false);
+};
 
 return (
-    <Grid container className={classes.HeaderBottom} >
-      <Grid item xs={12} className={classes.root} >
-        
-          <Grid className={classes.container}>
-          <NavLink  to="/movies">
-          <Paper className={classes.paper}>
-          <ButtonBase
-          className={classes.button}
-          focusRipple
+  <>
+  <Box>
+      <ButtonBase 
+        style={{ boxShadow: '0 8px 15px rgba(0, 0, 0, .5)' }}
+      >
+          <Card
+            color="secondary"
+            className={showsCard}
           >
-              
-  <CardContent className={classes.cardContent}>
-                  <img alt='' src={Img} className={classes.image}/>
-                        <p className={classes.text}>Movies</p>
-                           
-                </CardContent>
-                
-          </ButtonBase>
-          </Paper>
-          </NavLink>
-          <Typography className={classes.title}>
-                                Popular Movies
-          </Typography>  
-          </Grid>
-
-
-          <Grid className={classes.container}>
-          <NavLink to="/tvseries">
-          <Paper className={classes.paper}>
-          <ButtonBase
-          className={classes.button}
-          focusRipple
-          >
-              
-               <CardContent className={classes.cardContent}>
-              
-                     <img alt='' src={Img} className={classes.image}/>
-                        <p className={classes.text}>Series</p>
-                           
-                </CardContent>
-                
-          </ButtonBase>
-          </Paper>
-          </NavLink>  
-          <Typography className={classes.title}>
-                                Popular Series
-                     </Typography>
-          </Grid>
-          {/* <Grid>
-          <Paper className={classes.paper} />
-          </Grid> */}
-          
-        </Grid>
-      
-      
-    </Grid>
-  );
+              <CardContent className={showsCardContent}>
+                  { props.isGenre ? (
+                      <React.Fragment>
+                          <img className={categoryImg}
+                            alt="film icon"
+                            src={Img}
+                          />
+                          <Typography  className={showsGenre}>
+                              { props.genreTitle}
+                          </Typography>
+                      </React.Fragment>
+                  ): (
+                      <React.Fragment>
+                          <CircularProgress size={25}
+                            style={{ color:'#fff', display: isImgLoading ? 'block' : 'none' }}
+                          />
+                          <img className={showsImg}
+                            src={props.imgUrl}
+                            alt="show poster"
+                            style={{ display: isImgLoading ? 'none' : 'block' }}
+                            onLoad={onImgLoadHandler}
+                          />
+                      </React.Fragment>
+                  )}
+              </CardContent>
+          </Card>
+      </ButtonBase>
+      <Typography variant="body2"
+        style={{textAlign: 'left', fontWeight: 600, marginTop:5, color:'#fff', maxWidth: props.width ? props.width : 230 }}
+      >
+          { props.cardTitle }
+      </Typography>
+  </Box>
+  </>
+);
 }

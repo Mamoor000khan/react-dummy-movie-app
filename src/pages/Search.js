@@ -23,7 +23,7 @@ function Search() {
 
     return (
         <div >
-            <SearchBar InputValue={getSearchData} />
+            <SearchBar InputValue={getSearchData}  />
             {searchValue && searchValue.trim().length >= 2 && <MovieList movies={fetchedData} /> }
         </div>
     )

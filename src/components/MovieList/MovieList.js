@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState,useEffect } from 'react';
 import DummyMovieStructure from '../DummyMovieStructure/DummyMovieStructure';
 import Movie from '../Movie/Movie';
 import classes from './MovieList.module.css';
@@ -18,10 +18,11 @@ function MovieList(props) {
          <DummyMovieStructure /> <DummyMovieStructure /> <DummyMovieStructure />  
         </Fragment>
     }
-
+  
      
 return (
         <div className={`${classes.MovieList} ${props.className}`} >
+            
             {
                props.movies ? props.movies.map((movie, i) => {
                     return movie.vote_average > 1 && <Movie id={movie.id} key={i} image={movie.poster_path || movie.backdrop_path ? `${imgBaseUrl}${movie.poster_path || movie.backdrop_path}` : movieNoImg} background={`${BACKDROP_PATH}${movie.poster_path || movie.backdrop_path}`} name={movie.name ? movie.name : movie.title} type={movie.media_type === 'tv' ? 'Tv Series' : movie.media_type ? movie.media_type : props.type || props.type} date={movie.release_date ? movie.release_date : movie.first_air_date} rating={movie.vote_average.toFixed(1)} />

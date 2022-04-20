@@ -1,104 +1,160 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useEffect, useState, Dispatch } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import classes from './Nav.module.css';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Typography from '@material-ui/core/Typography';
+import { AppBar, Toolbar, Button, Typography, Container, makeStyles, Menu, MenuItem, IconButton } from '@material-ui/core';
+import { MoreVert as MoreVertIcon } from '@material-ui/icons';
 
 
-const useStyles = makeStyles(() => ({
-    // heading: {
-    //     width: '250px',
-    //     maxHeight: '50px',
-    //     marginTop: '3px',
-    //     color: '#fff',
-    //     textAlign: 'initial',
-    //     lineHeight: '64px',
-    //     fontSize: '1.7142857142857142rem',
-    //     fontFamily: 'Work Sans, sans-serif',
-    //     fontWeight: '500',
-    //     letterSpacing: '1px',
-    //     cursor: 'pointer',
-    //     marginLeft:'8px',
-    //     textDecoration:'none',
-    // },
-    // signin:{
-      
-    //     fontSize: '0.9285714285714285rem',
-    //     fontFamily: 'Work Sans, sans-serif',
-    //     textDecoration: 'none',
-    //     fontWeight: '500',
-    //     textTransform: 'initial',
-    //    color: '#fff'
-    // },
-    signup:{
-        fontFamily: 'Work Sans, sans-serif',
-        textTransform: 'initial',
-        fontSize:' 14px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '159px',
-        height: '34px',
-        padding:'4px 10px', 
-        borderRadius:'0px',
-        backgroundColor: '#2b2b2b',
-
-        '&:hover':{
-            backgroundColor: '#1c1e1f',
-            boxShadow: 'none',
+const useStyles = makeStyles((theme) => ({
+    title: {
+        flexGrow: 1,
+        fontWeight: 500,
+        textAlign:'Left',
+        [theme.breakpoints.down('xs')]: {
+          fontSize: 16,
+          lineHeight: 1,
+          
         }
-        
-    },
-}));
+        },
+        login: {
+            marginRight: theme.spacing(2),
+      },
+      registerBtnMain: {
+        [theme.breakpoints.down('xs')]: {
+          display:'none'
+        }
+      },
+      registerBtnSec: {
+        display: 'none',
+        [theme.breakpoints.down('xs')]: {
+          display:'block'
+        }
+      }
+    }));
 
-export default function Nav() {
-     const Classes = useStyles();
-    return (
-        <nav id="Nav" className={classes.nav}>
-            <Grid className={classes.container}>
-                <Grid  className={classes.box}>
-                    {/* <Grid item xs={11} sm={11}  style={{textAlign: "initial"}}>
-                        <NavLink className={Classes.heading}  to="/home">DEMO Streaming</NavLink>
-                    </Grid>
-                    <Grid item xs={1} sm={1} style={{width:'64px', height:'34px',marginTop:'17px',display:'flex', justifyContent: 'end'}}>
-                        <Button style={{marginTop: '6px'}}>
-                        <Link className={Classes.signin} to='/login'>   
-                          Log in
-                          </Link>
-                        </Button>
-                    </Grid>
-                    <Grid item xs={2} sm={2} style={{width:'160px', height:'34px',marginTop:'10px',boxShadow: 'none'}}>
-                        <Button >
-                        <Link className={Classes.signup} to='/Signup'>    
-                          Start your free trial
-                          </Link> 
-                        </Button>
-                    </Grid> */}
-                    <Grid style={{display: 'flex', position: 'relative',alignItems: 'center',maxWidth:'100%'}}>
-                        <Typography variant="h5" style={{textAlign: "initial", width:'990px',}}>
-                        <NavLink className={classes.heading}  to="/home">DEMO Streaming</NavLink>
-                        </Typography>
-
-                        
-                    <Button   href="#contained-buttons" style={{width: '64px',
-                            height: '34px',padding:'4px 5px',marginRight:'16px'}}>
-                    <Link className={classes.signin} to='/login'>   
-                          Log in
-                          </Link>
-</Button>
-<Button className={Classes.signup} variant="contained"  >
-<Link style={{color: '#fff', textDecoration:'none', boxShadow:'none'}}   to='/Signup'>    
-                          Start your free trial
-                          </Link>
-</Button>
-
-                    </Grid>
-                </Grid>
-            </Grid>
-        </nav>
-    );
-}
-
+export default function Nav(props) {
+      
+      const { registerBtnMain, registerBtnSec, login, title } = useStyles();
+    
+      const [userAuth, setUserAuth] = useState(false);
+    
+      // Menu
+      const [anchorEl, setAnchorEl] = React.useState(null);
+      const open = Boolean(anchorEl);
+    
+      const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+      };
+    
+      const handleClose = () => {
+        setAnchorEl(null);
+      };
+      //--
+    
+      // const logout = () => {
+      //   // firebase.auth().signOut()
+      //   .then(() => {
+      //     props.storeAuthUser(null);
+      //     // Redirect to login page
+      //     props.history.push('/login');
+      //   });
+      // };
+    
+      useEffect(() => {
+        if(props.user){
+          setUserAuth(true);
+        } else {
+          setUserAuth(false);
+        }
+      }, [props.user]);
+    
+    const renderNavBtn = () => {
+        // Show navbar buttons (login logout etc) according to user auth
+        if(!userAuth) {
+          return  (
+              <React.Fragment>
+                  <Button
+                    size="small"
+                    // onClick={() => props.history.push('/login')}
+                    className={login}
+                    color="inherit"
+                  >Log in</Button>
+                  <Button 
+                    className={registerBtnMain}
+                    variant="contained"
+                    size="small"
+                    color="secondary"
+                    // onClick={() => props.history.push('/register')}
+                  >Start your free trial</Button>
+                  <Button 
+                    className={registerBtnSec}
+                    variant="contained"
+                    size="small"
+                    color="secondary"
+                    // onClick={() => props.history.push('/register')}
+                  >Register</Button>
+              </React.Fragment>
+          );
+        } else {
+          return  (
+              <React.Fragment>
+                  {/* Menu */}
+                  <IconButton
+                    aria-label="more"
+                    aria-controls="long-menu"
+                    aria-haspopup="true"
+                    // onClick={handleClick}
+                  >
+                      <MoreVertIcon style={{ color: '#fff' }} />
+                  </IconButton>
+                  <Menu
+                    id="long-menu"
+                    // anchorEl={anchorEl}
+                    // getContentAnchorEl={null}
+                    anchorOrigin={{ vertical: "bottom", horizontal: -110 }}
+                    keepMounted
+                    // open={open}
+                    // onClose={handleClose}
+                  >
+                      <MenuItem
+                        component={Link}
+                        to="/account"
+                        // onClick={handleClose}
+                      >
+                          My Account
+                      </MenuItem>
+                      <MenuItem
+                        // onClick={logout}
+                      >
+                          Logout
+                      </MenuItem>
+                  </Menu>
+              </React.Fragment>
+          );
+        }
+      }; 
+    
+    
+     return (
+       <AppBar position="static"
+        elevation={0}
+      >
+          <Container>
+              <Toolbar style={{ padding: 0 }}>
+                  <Typography
+                    variant="h5"
+                    className={title}
+                  >
+                      <Link to="/"
+                        style={{ textDecoration: 'none', color: '#fff' }}
+                      >
+                          DEMO Streaming
+                      </Link>
+                  </Typography>
+                  {renderNavBtn()}
+              </Toolbar>
+          </Container>
+      </AppBar>
+      );
+  };
