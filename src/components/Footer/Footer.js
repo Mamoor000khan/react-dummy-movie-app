@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import Apple from '../../Assets/Image/apple.png';
-import Google from '../../Assets/Image/google.png';
+import Apple from '../../Assets/images/apple.png';
+import Google from '../../Assets/images/google.png';
 
 
 

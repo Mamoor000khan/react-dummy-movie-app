@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {  Card, CardContent, Typography, makeStyles, Box, ButtonBase, CircularProgress } from '@material-ui/core';
-import Img from '../../Assets/Image/SVG/film.svg';
+import Img from '../../Assets/svgs/film.svg';
 
 // type OwnProps = {
 //   cardTitle: string;

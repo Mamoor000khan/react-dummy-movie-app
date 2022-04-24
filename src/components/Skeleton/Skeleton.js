@@ -12,9 +12,9 @@ const useStyles = makeStyles(theme => ({
 
 const skeletons = [];
 
-// for(let i = 0; i <= 11; i++){
-//   skeletons.push(i);
-// }
+for(let i = 0; i <= 11; i++){
+  skeletons.push(i);
+}
 
 function SkeletonLoader()  {
     const { skeletonStyle } = useStyles();

@@ -47,9 +47,9 @@
     text-align: start;   
 }
 
-.searchBox{
+.Box{
     width: 1280px;
-    height:2177px;
+    /* height:2177px; */
     display: block;
     margin: auto;
     box-sizing: border-box;

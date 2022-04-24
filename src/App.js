@@ -2,15 +2,15 @@ import React, { Suspense } from 'react';
 import './App.css';
 import { Route, Redirect } from 'react-router-dom';
 import Main from './components/UI/Main';
+import { AuthContextProvider } from './store/auth-context';
 
 import Header from './pages/Home';
 import DiscoverMovies from './pages/DiscoverMovies';
 import DiscoverTvSeries from './pages/DiscoverTvSeries';
 import Search from './pages/Search';
-import LoginPage from './pages/LoginPage';
-import SignUpPage from './pages/SignUpPage';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
-import LoggedIn from './pages/LoggedIn';
 
 const Specific = React.lazy(() => import('./pages/Specific'));
 // const NotFound = React.lazy(() => import('./components/UI/NotFound'));
@@ -32,6 +32,7 @@ function App() {
           <Header />
         </Route>
 
+        <AuthContextProvider>
         <Route path="/movies" exact>
             <DiscoverMovies />
           </Route>
@@ -41,16 +42,13 @@ function App() {
           <Route path="/search" exact>
             <Search />
           </Route>
-          <Route path='/login'>
-          <LoginPage />
-          
-        </Route>
-        <Route path='/signup'>
-          <SignUpPage />
-        </Route>
-        <Route path='/loggedin'>
-          <LoggedIn />
-        </Route>
+          </AuthContextProvider>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Login></Login>
+          </Route>
         
 
         <Suspense fallback={''}>
@@ -69,5 +67,9 @@ function App() {
 }
 
 export default App;
+
+
+
+
 
 

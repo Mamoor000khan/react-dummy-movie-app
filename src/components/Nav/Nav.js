@@ -77,6 +77,8 @@ export default function Nav(props) {
                   <Button
                     size="small"
                     // onClick={() => props.history.push('/login')}
+                    component={Link}
+                    to="/login"
                     className={login}
                     color="inherit"
                   >Log in</Button>
@@ -85,6 +87,8 @@ export default function Nav(props) {
                     variant="contained"
                     size="small"
                     color="secondary"
+                    component={Link}
+                    to="/register"
                     // onClick={() => props.history.push('/register')}
                   >Start your free trial</Button>
                   <Button 
@@ -137,7 +141,7 @@ export default function Nav(props) {
     
     
      return (
-       <AppBar position="static"
+       <AppBar id="Nav" position="static"
         elevation={0}
       >
           <Container>

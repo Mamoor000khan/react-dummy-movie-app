@@ -1,6 +1,6 @@
 .MovieList {
     width: 1248px;
-    height: 2025px;
+    /* height: 2025px; */
     display: grid;
     grid-template-columns: repeat(5 ,20%);
     /* grid-gap: 5rem 0; */
@@ -9,7 +9,7 @@
     /* padding-top: 1rem; */
     margin-bottom: 10rem;
     backface-visibility: hidden;
-    margin: auto;
+    margin-bottom: 40px;
 }
 
 .MovieList a {
@@ -43,7 +43,7 @@
 
 @media only screen and (max-width: 600px) {
     .MovieList {
-        grid-template-columns: repeat(2, 40%);
+        grid-template-columns: repeat(1, 70%);
     }
 }
 

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-// import AuthContext from '../store/auth-context';
+import React, { useEffect, useState, useContext } from 'react'
+ import AuthContext from '../store/auth-context';
 import MovieList from '../components/MovieList/MovieList';
 import classes from './Style.module.css';
 import Search from './Search';
@@ -9,32 +9,32 @@ import HeaderTop from '../components/Header/HeaderTop';
 
 function DiscoverMovies(props) {
     
-    // const ctx = useContext(AuthContext);
+    const ctx = useContext(AuthContext);
     const [fetchedMovies, setFetchedMovies] = useState();
     const [genreId, setGenreId] = useState('');
 
     useEffect(() => {
         const fetchMovies = async () => {
             setFetchedMovies(false);
-            const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=847ab230a96a2f52bc3f647f23dc84a4&language=en-US&sort_by=popularity.desc`);
+            const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=847ab230a96a2f52bc3f647f23dc84a4&language=en-US&sort_by=popularity.desc${genreId ? `&with_genres=${genreId.map(e => e)}` : '' }&page=${ctx.pageNo}&with_watch_monetization_types=flatrate`);
             const data = await res.json();
             setFetchedMovies(data.results);
-            console.log(data);
+             ctx.setFetchResponse(data.results);
         }
         
         fetchMovies();
-    }, [genreId, ])
+    }, [genreId,ctx.pageNo ])
 
     return (
          <div>
              <Nav/>
             <HeaderTop text="Movies"/>
         
-        <div className={classes.searchBox}>
+        <div className={classes.Box}>
          <Search 
           placeholder={'Search Movies'}
           />
-        <MovieList   type='Movie' movies={fetchedMovies} />
+        <MovieList ShowPagination   type='Movie' movies={fetchedMovies} />
             </div>
             <Footer/>
         </div>

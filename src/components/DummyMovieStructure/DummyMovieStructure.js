@@ -1,16 +1,15 @@
 import React from 'react'
 import classes from './DummyMovieStructure.module.css';
 import Backdrop from '@material-ui/core/Backdrop';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircleLoader from '../CircleLoader/CircleLoader';
+import Skeleton from '../Skeleton/Skeleton';
 
 export default function DummyMovieStructure() {
     return (
         <div className={classes.DummyMovie}>
-             <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
->
-        <CircularProgress color="inherit" />
-      
+     
+            <Skeleton/> 
+            
             
             <h4 className={classes.MovieRating}></h4>
             <span className={classes.Image} />
@@ -18,7 +17,7 @@ export default function DummyMovieStructure() {
             <div>
                 <p className={classes.Type}></p> <p className={classes.Date}></p>
             </div>
-            </Backdrop>  
+              
         </div>
     )
 }
